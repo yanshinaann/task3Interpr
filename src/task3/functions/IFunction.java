@@ -4,8 +4,8 @@ import java.util.Map;
 
 public interface IFunction {
 
-    double computeY(double x, Map<String, Double> params);
-    Map<String, Double> paramsFun(double [] a, Map<String, Double> paramsF);
+    double computeY(double x);
+   //Map<String, Double> paramsFun(double [] a);
     String getType();
 
     int getN();

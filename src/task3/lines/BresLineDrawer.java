@@ -5,10 +5,10 @@ import task3.points.ScreenPoint;
 
 import java.awt.*;
 
-public class BresLine implements LineDrawer {
+public class BresLineDrawer implements LineDrawer {
 
 
-    public BresLine() {
+    public BresLineDrawer() {
 
     }
 

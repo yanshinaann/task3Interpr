@@ -32,8 +32,8 @@ public class DrawPanel extends JPanel implements MouseMotionListener, MouseListe
     public DrawPanel() {
         super();
         //lineDrawer = new DDALineDrawer();
-      // lineDrawer = new WuLine();
-        lineDrawer = new BresLine();
+      // lineDrawer = new WuLineDrawer();
+        lineDrawer = new BresLineDrawer();
         function = new Function0();
 
         wr = 100;
@@ -103,7 +103,7 @@ public class DrawPanel extends JPanel implements MouseMotionListener, MouseListe
                 function = new Function5();
                 break;
             }
-        }
+        }//mas fun
 
         print(function.getType());
 
@@ -118,7 +118,7 @@ public class DrawPanel extends JPanel implements MouseMotionListener, MouseListe
         for (int i = 0; i < n; i++) {
             array[i] = scanner.nextDouble();
         }
-        function.paramsFun(array, params);
+       // function.paramsFun(array, params);
 //
         repaint();
 
@@ -139,7 +139,8 @@ public class DrawPanel extends JPanel implements MouseMotionListener, MouseListe
             lineDrawer.drawLine(pd, screenConverter.r2s(new RealPoint(-xr, 0)), screenConverter.r2s(new RealPoint(xr, 0)), Color.RED);
             lineDrawer.drawLine(pd, screenConverter.r2s(new RealPoint(0, -yr)), screenConverter.r2s(new RealPoint(0, yr)), Color.RED);
             console();
-            drawFunction = new DrawFunction(function, lineDrawer, pd, screenConverter, Color.WHITE, ws, hs, params);
+            drawFunction = new DrawFunction(function, lineDrawer, pd, screenConverter, Color.WHITE, ws, hs, params);//ws hs iz sc
+            //создали один раз а сюда в кач-ве аргумента изменябщиеся значения
             drawFunction.drawF();
 
         }

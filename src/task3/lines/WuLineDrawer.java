@@ -10,7 +10,7 @@ import static java.lang.Math.ceil;
 import static java.lang.Math.floor;
 
 
-public class WuLine implements LineDrawer {
+public class WuLineDrawer implements LineDrawer {
 
     public void drawLine(PixelDrawer pd, ScreenPoint p1, ScreenPoint p2, Color color) {
 

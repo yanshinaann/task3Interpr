@@ -32,7 +32,7 @@ public class DrawFunction {
     }
 
 
-    public void drawF() {
+    public void drawF() { //d в кач-ве аргумента pd if param
         double x, y;
         RealPoint tempRP = new RealPoint(-1 * weightWindow / 2, heightWindow / 2), rp;
         ScreenPoint tempSP, sp;
@@ -41,7 +41,8 @@ public class DrawFunction {
 
             tempSP = sc.r2s(tempRP);
             x = i;
-            y = f.computeY(x, params);
+           // y = f.computeY(x, params);
+            y = f.computeY(x);
 
             rp = new RealPoint(x, y);
             sp = sc.r2s(rp);
@@ -52,4 +53,6 @@ public class DrawFunction {
 
         }
     }
+
+    //
 }
