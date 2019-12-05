@@ -34,7 +34,19 @@ public class ScreenConverter {
 
         return new RealPoint(x, y);
     }
+    public int r2sX(double x) {
+        return (int) Math.round((x - xr) * ws / wr);
+    }
+    public int r2sY(double y) {
+        return (int) Math.round((yr - y) * hs / hr);
+    }
+    public double s2rX(int i) {
+        return xr + i * wr / ws;
+    }
 
+    public double s2rY(int j) {
+        return yr - j * hr / hs;
+    }
 
     public double getXr() {
         return xr;

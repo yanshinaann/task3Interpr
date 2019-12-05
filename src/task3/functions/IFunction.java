@@ -4,8 +4,10 @@ import java.util.Map;
 
 public interface IFunction {
 
-    double computeY(double x);
-   //Map<String, Double> paramsFun(double [] a);
+    double computeY(double x, Map<String, Double> params);
+
+    Map<String, Double> paramsFun(double[] a, Map<String, Double> params);
+
     String getType();
 
     int getN();
