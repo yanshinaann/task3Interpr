@@ -18,13 +18,9 @@ public class ScreenConverter {
 
 
     public ScreenPoint r2s(RealPoint p) {
-
-            int i = (int) Math.round((p.getX() - xr) * ws / wr);
-            int j = (int) Math.round((yr - p.getY()) * hs / hr);
-            return new ScreenPoint(i, j);
-
-
-
+        int i = (int) Math.round((p.getX() - xr) * ws / wr);
+        int j = (int) Math.round((yr - p.getY()) * hs / hr);
+        return new ScreenPoint(i, j);
 
     }
 
@@ -34,12 +30,15 @@ public class ScreenConverter {
 
         return new RealPoint(x, y);
     }
+
     public int r2sX(double x) {
         return (int) Math.round((x - xr) * ws / wr);
     }
+
     public int r2sY(double y) {
         return (int) Math.round((yr - y) * hs / hr);
     }
+
     public double s2rX(int i) {
         return xr + i * wr / ws;
     }

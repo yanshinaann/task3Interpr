@@ -12,34 +12,34 @@ public class FunctionDrawer {
     private LineDrawer ld;
     private PixelDrawer pd;
     private ScreenConverter sc;
-    private Interpritator in;
+    private Interpretator in;
 
 
-
-    public FunctionDrawer(Interpritator in, LineDrawer ld, PixelDrawer pd, ScreenConverter sc) {
+    public FunctionDrawer(Interpretator in, LineDrawer ld, PixelDrawer pd, ScreenConverter sc) {
         this.in = in;
         this.ld = ld;
         this.pd = pd;
         this.sc = sc;
     }
 
-    public double compute(String func, Interpritator in, double x) {
+    //funcDr не зависит от интерпретатор
+    public double compute(String func, Interpretator in, double x) {
 
         in.setVariable("x", x);
         try {
             return in.parse(func);
         } catch (Exception e) {
-            System.out.println("неправильные данные");
+            System.out.println("Неправильные данные");
         }
         return 0;
     }
 
-    public void draw(String str) {
-
+    public void draw(String str) {//тут не нужно строку
+        //отдельный класс, интерпретаторы может быть разными
         double x = sc.getXr();
         double error = sc.getWr() / sc.getWs();
         double from = x;
-        double to = sc.getWr()+(sc.getXr());
+        double to = sc.getWr() + (sc.getXr());
 //        if(reverse) {
 //            x = sc.getYr();
 //            error = sc.getHr() / sc.getHs();
@@ -48,14 +48,14 @@ public class FunctionDrawer {
 //        }
 
         double y = compute(str, in, x);
-        for (double i = from; i <= to; i+=error) {
+        for (double i = from; i <= to; i += error) {
 
             double newY = compute(str, in, x);
 //            if(reverse) {
 //                ld.drawLine(pd, sc.r2s(new RealPoint(y, x)), sc.r2s(new RealPoint(newY, i)), Color.RED);
 //            }else {
-                ld.drawLine(pd, sc.r2s(new RealPoint(x, y)), sc.r2s(new RealPoint(i, newY)), Color.RED);
-           // }
+            ld.drawLine(pd, sc.r2s(new RealPoint(x, y)), sc.r2s(new RealPoint(i, newY)), Color.RED);
+            // }
             y = newY;
             x = i;
         }

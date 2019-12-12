@@ -4,7 +4,7 @@ package task3.draw;
 import java.util.HashMap;
 
 
-public class Interpritator {
+public class Interpretator {
     private class Result {
 
         public double cur;
@@ -20,7 +20,7 @@ public class Interpritator {
     private HashMap<String, Double> variables;
 
 
-    public Interpritator() {
+    public Interpretator() {
         variables = new HashMap<String, Double>();
     }
 
@@ -31,7 +31,7 @@ public class Interpritator {
 
     public Double getVariable(String variableName) {
         if (!variables.containsKey(variableName)) {
-            System.err.println( "Error: Try get unexists variable '"+variableName+"'" );
+            System.err.println( "Error: Try get non-exists variable '"+variableName+"'" );
             return 0.0;
         }
         return variables.get(variableName);
@@ -75,7 +75,7 @@ public class Interpritator {
             if (!r.rest.isEmpty() && r.rest.charAt(0) == ')') {
                 r.rest = r.rest.substring(1);
             } else {
-                System.err.println("Error: not close bracket");
+                System.err.println("Error: no close bracket");
             }
             return r;
         }
